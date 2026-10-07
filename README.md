@@ -25,3 +25,29 @@ API предоставляет информацию о книгах библио
 
 ```bash
 ./mvnw spring-boot:run
+
+## Запуск через Docker
+
+Сборка Docker-образа:
+
+docker build -t library-api .
+
+Запуск контейнера:
+
+docker run -d --name library-container -p 8080:8080 library-api
+
+Проверка контейнера:
+
+docker ps
+
+Проверка API:
+
+http://localhost:8080/books
+
+Просмотр логов:
+
+docker logs library-container
+
+Остановка контейнера:
+
+docker stop library-container
